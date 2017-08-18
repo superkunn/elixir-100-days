@@ -1,8 +1,8 @@
-defmodule Discuss.Mixfile do
+defmodule Kblog.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :discuss,
+    [app: :kblog,
      version: "0.0.1",
      elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -16,8 +16,8 @@ defmodule Discuss.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Discuss, []},
-     extra_applications: [:logger, :ueberauth, :ueberauth_github] ]
+    [mod: {Kblog, []},
+     extra_applications: [:logger]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,10 +35,7 @@ defmodule Discuss.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"},
-     {:ueberauth, "~> 0.4"},
-     {:ueberauth_github, "~> 0.4"}
-   ]
+     {:cowboy, "~> 1.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :discuss,
-  ecto_repos: [Discuss.Repo]
+config :kblog,
+  ecto_repos: [Kblog.Repo]
 
 # Configures the endpoint
-config :discuss, Discuss.Endpoint,
+config :kblog, Kblog.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "M/nv79Cfvf7/RkjWkjtjLCC/jrRAbKtFr/xcvhJDxMprwqOvP6nMwXi7BlDqvoz9",
-  render_errors: [view: Discuss.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Discuss.PubSub,
+  secret_key_base: "wY3X9u1ENYYxAIgchVN4BOM4JmnCEQrRpBkQ+MLCIEfAzpVW1njcUFtHwUeDc9xa",
+  render_errors: [view: Kblog.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Kblog.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
@@ -25,13 +25,3 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-
-config :ueberauth, Ueberauth,
-  providers: [
-    github: {Ueberauth.Strategy.Github, []}
-  ]
-
-  config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-    client_id: System.get_env("c9d392f67f45fb246054"),
-    client_secret: System.get_env("")
